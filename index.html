@@ -11,9 +11,10 @@
             box-sizing: border-box;
         }
 
+        /* Change sara and mohamed lines */
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.0;
+            line-height: 2.0;
             color: #333;
             overflow-x: hidden;
         }
@@ -151,7 +152,36 @@
             font-family: 'Georgia', serif;
             font-weight: 300;
             margin-bottom: 20px;
-            color: #8b7355;
+            color: #A9A9A9;
+        }
+
+        .section-titleW {
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #A9A9A9;
+        }
+
+        .section-titlee {
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            font-weight: 300;
+            margin-bottom: 1px;
+            margin-top: 60px;
+            color: #A9A9A9;
+        }
+
+        .section-titleee {
+            text-align: center;
+            font-size: 1.5em;
+            font-family: 'Georgia', serif;
+            font-weight: 100;
+            margin-bottom: 1px;
+            margin-top: 20px;
+            color: #A9A9A9;
         }
 
         .section-subtitle {
@@ -188,12 +218,20 @@
         .detail-icon {
             font-size: 3em;
             margin-bottom: 20px;
-            color: #8b7355;
+            color: #A9A9A9;
+        }
+
+        .detail-icon-img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
         .detail-card h3 {
             font-size: 1.5em;
-            color: #8b7355;
+            color: #A9A9A9;
             margin-bottom: 15px;
             font-family: 'Georgia', serif;
         }
@@ -204,9 +242,9 @@
             line-height: 1.8;
         }
 
-        /* RSVP Section */
+        /* RSVP Section - a88f7a */
         .rsvp-section {
-            background: linear-gradient(135deg, #8b7355 0%, #a88f7a 100%);
+            background: linear-gradient(135deg, #A9A9A9 0%, #a88f7a 100%);
             color: white;
         }
 
@@ -234,7 +272,7 @@
         .form-group label {
             display: block;
             margin-bottom: 10px;
-            color: #8b7355;
+            color: #A9A9A9;
             font-weight: 600;
             font-size: 1em;
             text-transform: uppercase;
@@ -253,14 +291,14 @@
 
         .form-group input:focus {
             outline: none;
-            border-color: #8b7355;
+            border-color: #A9A9A9;
             background: white;
         }
 
         .submit-btn {
             width: 100%;
             padding: 18px;
-            background: linear-gradient(135deg, #8b7355 0%, #a88f7a 100%);
+            background: linear-gradient(135deg, #A9A9A9 0%, #a88f7a 100%);
             color: white;
             border: none;
             border-radius: 5px;
@@ -309,7 +347,7 @@
         .attendance-btn {
             flex: 1;
             padding: 15px;
-            border: 2px solid #8b7355;
+            border: 2px solid #a9a9a9;
             border-radius: 5px;
             background: white;
             color: #8b7355;
@@ -415,6 +453,10 @@
                 font-size: 2em;
             }
 
+            .section-titlee {
+                font-size: 2em;
+            }
+
             .rsvp-form {
                 padding: 30px 20px;
             }
@@ -429,9 +471,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-date">Save The Date</p>
-            <h1 class="names">Sara & Mohammed</h1>
-            <h1>We're Getting Married!</h1>
+            <!-- <p class="hero-date">Save The Date</p> -->
+            <h1 class="names">Sara & Mohamad</h1>
+            <h1>Are Getting Married!</h1>
             <p class="hero-tagline">We love you and can't wait to celebrate our day with you!</p>
             <div id="countdown" class="countdown" aria-live="polite">
                 <div>
@@ -459,37 +501,45 @@
 
     <!-- Wedding Details Section -->
     <section class="section">
-        <h2 class="section-title">Wedding Details</h2>
+        <h2 class="section-titleW">Wedding Details</h2>
         <!-- <p class="section-subtitle">Mark your calendars for our special day</p> -->
         
         <div class="details-grid">
             <div class="detail-card">
-                <div class="detail-icon">📅</div>
+                <div class="detail-icon"></div>
+                <img src="Image/wedding-day_895025.png" alt="Date" class="detail-icon-img">
                 <h3>Date</h3>
                 <!-- <p>Save the Date<br><strong>Coming Soon</strong></p> -->
                 <p><strong>25-12-25</strong></p>
             </div>
 
             <div class="detail-card">
-                <div class="detail-icon">⏰</div>
+                <div class="detail-icon"></div>
+                <img src="Image/clock_14690880.png" alt="Time" class="detail-icon-img">
                 <h3>Time</h3>
                 <!-- <p>Ceremony & Reception<br><strong>To Be Announced</strong></p> -->
                 <p><strong>7:30 PM</strong></p>
             </div>
 
             <div class="detail-card">
-                <div class="detail-icon">📍</div>
+                <div class="detail-icon"></div>
+                <img src="Image/location_15088672.png" alt="Venue" class="detail-icon-img">
                 <h3>Venue</h3>
                 <!-- <p>Beautiful Location<br><strong>Details Coming Soon</strong></p> -->
                 <p><strong>Mövenpick AlBidaa</strong></p>
             </div>
+
         </div>
+
+        <p class="section-titlee"> Your presence is our gift.</p>
+        <h1 class="section-titleee"> For those who wish to honor us with a gesture, here is our bank details.</h1>
+
     </section>
 
     <!-- RSVP Section -->
     <section class="section rsvp-section">
-        <h2 class="section-title">Reservation</h2>
-        <p class="section-subtitle">Please confirm your attendance</p>
+        <h2 class="section-title">Wedding RSVP</h2>
+        <p class="section-subtitle">Please let us know if you’ll be celebrating with us</p>
         
         <div class="rsvp-form">
             <!-- Formspree form (action points to your Formspree form) -->
@@ -498,41 +548,42 @@
                 <input type="hidden" name="_subject" value="Sara&Mohammed Wedding">
                 <!-- Formspree will use the email field as reply-to; keep field name 'email' -->
                 <div class="attendance-choice">
-                    <button type="button" class="attendance-btn" data-attending="yes">I Will Attend</button>
-                    <button type="button" class="attendance-btn" data-attending="no">I Cannot Attend</button>
+                    <button type="button" class="attendance-btn" data-attending="yes">Joyfully Accept</button>
+                    <button type="button" class="attendance-btn" data-attending="no">Regretfully Decline</button>
                 </div>
 
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                </div>
+                <!-- Detailed RSVP fields are hidden until user clicks an attendance button -->
+                <div class="rsvp-details" style="display: none;">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
 
-                <div class="form-group" id="guestCountGroup" style="display: none;">
-                    <label for="guestCount">Number of Guests (including you)</label>
-                    <select class="form-control" id="guestCount" name="guestCount">
-                        <option value="1">1 Guest</option>
-                        <option value="2">2 Guests</option>
-                        <option value="3">3 Guests</option>
-                        <option value="4">4 Guests</option>
-                        <option value="5">5 Guests</option>
-                    </select>
-                </div>
+                    <div class="form-group" id="guestCountGroup" style="display: none;">
+                        <label for="guestCount">Number of Guests (including you)</label>
+                        <select class="form-control" id="guestCount" name="guestCount">
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                        </select>
+                    </div>
 
-                <div id="guestNames" class="guest-names" style="display: none;">
-                    <!-- Dynamic guest name fields will be inserted here -->
-                </div>
+                    <div id="guestNames" class="guest-names" style="display: none;">
+                        <!-- Dynamic guest name fields will be inserted here -->
+                    </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
-                </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
 
-                <button type="submit" class="submit-btn">Confirm Attendance</button>
+                    <button type="submit" class="submit-btn">Confirm Your Presence</button>
+                </div>
             </form>
 
             <div id="successMessage" class="message"></div>
@@ -548,11 +599,12 @@
     <script>
         // Enhanced form submission: try serverless POST (Formspree or your endpoint), otherwise fallback to mailto.
         // Attendance choice handling
-        const attendanceBtns = document.querySelectorAll('.attendance-btn');
-        const guestCountGroup = document.getElementById('guestCountGroup');
-        const guestNamesContainer = document.getElementById('guestNames');
-        const guestCountSelect = document.getElementById('guestCount');
-        let isAttending = null;
+    const attendanceBtns = document.querySelectorAll('.attendance-btn');
+    const guestCountGroup = document.getElementById('guestCountGroup');
+    const guestNamesContainer = document.getElementById('guestNames');
+    const guestCountSelect = document.getElementById('guestCount');
+    const rsvpDetails = document.querySelector('.rsvp-details');
+    let isAttending = null;
 
         attendanceBtns.forEach(btn => {
             btn.addEventListener('click', function() {
@@ -560,10 +612,13 @@
                 this.classList.add('selected');
                 isAttending = this.dataset.attending === 'yes';
                 
+                // Reveal the detailed fields when an attendance button is clicked
+                if (rsvpDetails) rsvpDetails.style.display = 'block';
+
                 // Show/hide guest count and names based on attendance
                 guestCountGroup.style.display = isAttending ? 'block' : 'none';
                 guestNamesContainer.style.display = isAttending ? 'block' : 'none';
-                
+
                 // Reset and update guest name fields
                 if (isAttending) {
                     updateGuestNameFields();
@@ -686,9 +741,17 @@ ${isAttending ? `\nGuest List:${guestList}` : '\nWill not be able to attend.'}`)
                 form.reset();
             }
 
-            // hide message after a while
+            // hide message after a while and reset the details view
             setTimeout(() => {
                 messageDiv.style.display = 'none';
+                // hide detailed fields again
+                if (rsvpDetails) rsvpDetails.style.display = 'none';
+                // clear selected state
+                attendanceBtns.forEach(b => b.classList.remove('selected'));
+                isAttending = null;
+                // hide guest-specific fields
+                guestCountGroup.style.display = 'none';
+                guestNamesContainer.innerHTML = '';
             }, 8000);
         });
 
