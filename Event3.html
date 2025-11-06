@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - Save The Date</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.0;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 91vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('Image/IMG_9409.PNG') center/contain;
+            background-repeat: no-repeat;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero-date {
+            font-size: 1.2em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+        }
+
+        .hero-tagline {
+            font-size: 1.5em;
+            font-style: italic;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Countdown styling */
+        .countdown {
+            margin-top: 20px;
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .countdown .number {
+            background: rgba(255,255,255,0.12);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 1.6em;
+            font-weight: 700;
+            display: block;
+            text-align: center;
+        }
+
+        .countdown .label {
+            text-align: center;
+            font-size: 0.75em;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .scroll-indicator span::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            background: white;
+            border-radius: 50%;
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(20px); }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #8b7355;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+
+
+
+        /* Details Section */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .detail-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .detail-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #8b7355;
+        }
+
+        .detail-card h3 {
+            font-size: 1.5em;
+            color: #8b7355;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+        }
+
+        .detail-card p {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* RSVP Section */
+        .rsvp-section {
+            background: linear-gradient(135deg, #8b7355 0%, #a88f7a 100%);
+            color: white;
+        }
+
+        .rsvp-section .section-title {
+            color: white;
+        }
+
+        .rsvp-section .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #8b7355;
+            font-weight: 600;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e8e5e0;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: #faf9f7;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #8b7355;
+            background: white;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #8b7355 0%, #a88f7a 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 20px rgba(139, 115, 85, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 115, 85, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            animation: slideDown 0.5s ease;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+            display: block;
+        }
+
+        /* RSVP Attendance Choice */
+        .attendance-choice {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .attendance-btn {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #8b7355;
+            border-radius: 5px;
+            background: white;
+            color: #8b7355;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .attendance-btn.selected {
+            background: #8b7355;
+            color: white;
+        }
+
+        .attendance-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 115, 85, 0.2);
+        }
+
+        /* Guest List */
+        .guest-names {
+            margin-top: 20px;
+        }
+
+        .guest-name-field {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #faf9f7;
+        }
+
+        .guest-name-field h4 {
+            color: #8b7355;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        select.form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e8e5e0;
+            border-radius: 5px;
+            font-size: 1em;
+            background: #faf9f7;
+            color: #333;
+            cursor: pointer;
+        }
+
+        select.form-control:focus {
+            outline: none;
+            border-color: #8b7355;
+            background: white;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c2c2c;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .footer-hearts {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero-date {
+                font-size: 1em;
+            }
+
+            .hero-tagline {
+                font-size: 1.2em;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .rsvp-form {
+                padding: 30px 20px;
+            }
+
+            .details-grid {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-date">Save The Date</p>
+            <h1 class="names">Sara & Mohammed</h1>
+            <h1>We're Getting Married!</h1>
+            <p class="hero-tagline">We love you and can't wait to celebrate our day with you!</p>
+            <div id="countdown" class="countdown" aria-live="polite">
+                <div>
+                    <span id="days" class="number">0</span>
+                    <div class="label">Days</div>
+                </div>
+                <div>
+                    <span id="hours" class="number">00</span>
+                    <div class="label">Hours</div>
+                </div>
+                <div>
+                    <span id="minutes" class="number">00</span>
+                    <div class="label">Minutes</div>
+                </div>
+                <div>
+                    <span id="seconds" class="number">00</span>
+                    <div class="label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Wedding Details Section -->
+    <section class="section">
+        <h2 class="section-title">Wedding Details</h2>
+        <!-- <p class="section-subtitle">Mark your calendars for our special day</p> -->
+        
+        <div class="details-grid">
+            <div class="detail-card">
+                <div class="detail-icon">📅</div>
+                <h3>Date</h3>
+                <!-- <p>Save the Date<br><strong>Coming Soon</strong></p> -->
+                <p><strong>25-12-25</strong></p>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">⏰</div>
+                <h3>Time</h3>
+                <!-- <p>Ceremony & Reception<br><strong>To Be Announced</strong></p> -->
+                <p><strong>7:30 PM</strong></p>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">📍</div>
+                <h3>Venue</h3>
+                <!-- <p>Beautiful Location<br><strong>Details Coming Soon</strong></p> -->
+                <p><strong>Mövenpick AlBidaa</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="section rsvp-section">
+        <h2 class="section-title">Reservation</h2>
+        <p class="section-subtitle">Please confirm your attendance</p>
+        
+        <div class="rsvp-form">
+            <!-- Formspree form (action points to your Formspree form) -->
+            <form id="rsvpForm" action="https://formspree.io/f/xblpnpab" method="POST">
+                <!-- Optional: set a friendly subject for Formspree emails -->
+                <input type="hidden" name="_subject" value="Sara&Mohammed Wedding">
+                <!-- Formspree will use the email field as reply-to; keep field name 'email' -->
+                <div class="attendance-choice">
+                    <button type="button" class="attendance-btn" data-attending="yes">I Will Attend</button>
+                    <button type="button" class="attendance-btn" data-attending="no">I Cannot Attend</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group" id="guestCountGroup" style="display: none;">
+                    <label for="guestCount">Number of Guests (including you)</label>
+                    <select class="form-control" id="guestCount" name="guestCount">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                    </select>
+                </div>
+
+                <div id="guestNames" class="guest-names" style="display: none;">
+                    <!-- Dynamic guest name fields will be inserted here -->
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm Attendance</button>
+            </form>
+
+            <div id="successMessage" class="message"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>We can't wait to celebrate with you!</p>
+        <div class="footer-hearts">♥ ✨ ♥</div>
+    </footer>
+
+    <script>
+        // Enhanced form submission: try serverless POST (Formspree or your endpoint), otherwise fallback to mailto.
+        // Attendance choice handling
+        const attendanceBtns = document.querySelectorAll('.attendance-btn');
+        const guestCountGroup = document.getElementById('guestCountGroup');
+        const guestNamesContainer = document.getElementById('guestNames');
+        const guestCountSelect = document.getElementById('guestCount');
+        let isAttending = null;
+
+        attendanceBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                attendanceBtns.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                isAttending = this.dataset.attending === 'yes';
+                
+                // Show/hide guest count and names based on attendance
+                guestCountGroup.style.display = isAttending ? 'block' : 'none';
+                guestNamesContainer.style.display = isAttending ? 'block' : 'none';
+                
+                // Reset and update guest name fields
+                if (isAttending) {
+                    updateGuestNameFields();
+                } else {
+                    guestNamesContainer.innerHTML = '';
+                }
+            });
+        });
+
+        // Handle guest count changes
+        guestCountSelect.addEventListener('change', updateGuestNameFields);
+
+        function updateGuestNameFields() {
+            const count = parseInt(guestCountSelect.value);
+            guestNamesContainer.innerHTML = '';
+
+            for (let i = 0; i < count; i++) {
+                const field = document.createElement('div');
+                field.className = 'guest-name-field';
+                field.innerHTML = `
+                    <h4>Guest ${i + 1}${i === 0 ? ' (You)' : ''}</h4>
+                    <input type="text" 
+                           name="guest_name_${i + 1}" 
+                           class="form-control" 
+                           required 
+                           placeholder="Enter guest name"
+                           ${i === 0 ? 'id="name"' : ''}>
+                `;
+                guestNamesContainer.appendChild(field);
+
+                // If this is the first guest, sync it with the main name field
+                if (i === 0) {
+                    const nameInput = field.querySelector('input');
+                    nameInput.value = document.getElementById('name').value;
+                    nameInput.addEventListener('input', (e) => {
+                        document.getElementById('name').value = e.target.value;
+                    });
+                }
+            }
+        }
+
+        document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const attending = isAttending ? 'Yes' : 'No';
+            let guestList = '';
+
+            if (isAttending) {
+                const guestInputs = guestNamesContainer.querySelectorAll('input');
+                guestInputs.forEach((input, index) => {
+                    guestList += `\nGuest ${index + 1}: ${input.value}`;
+                });
+            }
+
+            const messageDiv = document.getElementById('successMessage');
+
+            // If the form action still contains the placeholder 'your-id', we treat it as not-configured
+            const action = (form.getAttribute('action') || '').trim();
+            const isPlaceholder = action.includes('your-id') || action === '';
+
+            if (!isPlaceholder && action.startsWith('https')) {
+                // Attempt to POST using fetch (Formspree or similar)
+                try {
+                    const formData = new FormData(form);
+                    // include an extra field so the receiver has the friendly message
+                    formData.append('message', 'RSVP submission from website');
+                    formData.append('attending', attending);
+                    formData.append('guest_list', guestList);
+
+                    const resp = await fetch(action, {
+                        method: form.method || 'POST',
+                        body: formData,
+                    });
+
+                    if (resp.ok) {
+                        messageDiv.className = 'message success';
+                        messageDiv.innerHTML = `\n                            <strong>Thank you, ${name}! 🎉</strong><br>\n                            We've received your RSVP.`;
+                        form.reset();
+                    } else {
+                        // non-2xx — fallback to mailto with instructions
+                        console.warn('Form submission returned non-OK status', resp.status);
+                        throw new Error('Submission failed');
+                    }
+                } catch (err) {
+                    // If fetch fails, fallback to mailto and inform the user
+                    console.error('Error sending form via fetch:', err);
+                    const subject = encodeURIComponent('Sara & Mohammed - ' + name);
+                    const body = encodeURIComponent(`New Wedding Invitation RSVP:\n
+Attendance: ${attending}
+Primary Contact:
+- Name: ${name}
+- Phone: ${phone}
+- Email: ${email}
+${isAttending ? `\nGuest List:${guestList}` : '\nWill not be able to attend.'}`);
+                    messageDiv.className = 'message success';
+                    messageDiv.innerHTML = `\n                        <strong>Thank you, ${name}!</strong><br>\n                        We couldn't submit automatically — your email client will open so you can send the RSVP.`;
+                    // Open user's email client
+                    window.location.href = `mailto:ktkooo-95@hotmail.com?subject=${subject}&body=${body}`;
+                    form.reset();
+                }
+            } else {
+                // No server endpoint configured: fallback to mailto (this requires a desktop email client configured)
+                const subject = encodeURIComponent('Sara & Mohammed Wedding - ' + name);
+                const body = encodeURIComponent(`New Wedding Invitation RSVP:\n
+Attendance: ${attending}
+Primary Contact:
+- Name: ${name}
+- Phone: ${phone}
+- Email: ${email}
+${isAttending ? `\nGuest List:${guestList}` : '\nWill not be able to attend.'}`);
+
+                messageDiv.className = 'message success';
+                messageDiv.innerHTML = `\n                    <strong>Thank you, ${name}!</strong><br>\n                    We couldn't send automatically because no endpoint is configured.\n                    Your email client will open so you can send the RSVP manually.`;
+
+                window.location.href = `mailto:ktkooo-95@hotmail.com?subject=${subject}&body=${body}`;
+                form.reset();
+            }
+
+            // hide message after a while
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 8000);
+        });
+
+        // Countdown to wedding date (25-12-2025)
+        (function() {
+            const target = new Date('2025-12-25T00:00:00');
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            function updateCountdown() {
+                const now = new Date();
+                let diff = target - now;
+                if (diff < 0) diff = 0;
+                const seconds = Math.floor(diff / 1000) % 60;
+                const minutes = Math.floor(diff / (1000 * 60)) % 60;
+                const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+                if (daysEl) daysEl.textContent = days;
+                if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+                if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+                if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
+
+        // Smooth scroll for scroll indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.querySelector('.section').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
